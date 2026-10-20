@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Student Management</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">SH</span>
+      <span><strong>StudentHub</strong><small>Student management</small></span>
+    </a>
+    <nav>
+      <a class="nav-link active" href="index.html">🎓 Student Portal</a>
+      <a class="nav-link" href="../employee-website/employee.html">👥 Employees</a>
+      <a class="nav-link" href="../todo-website/index.html">✓ TaskFlow</a>
+    </nav>
+    <div class="sidebar-bottom">● Browser storage mode</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">STUDENT MANAGEMENT</p>
+        <h1>Student Portal</h1>
+        <p class="muted">Manage student records and daily attendance.</p>
+      </div>
+      <button class="primary-btn" id="add-student">+ Add Student</button>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow light">YOUR STUDENT COMMUNITY</p>
+        <h2>Every student, one organized place.</h2>
+        <p>Keep student information and attendance up to date.</p>
+      </div>
+      <span class="welcome-icon">🎓</span>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Total students</span>
+        <h2 id="total-students">0</h2>
+        <p>All registered students</p>
+      </article>
+      <article class="stat-card">
+        <span>Active students</span>
+        <h2 id="active-students">0</h2>
+        <p>Currently active</p>
+      </article>
+      <article class="stat-card">
+        <span>Present today</span>
+        <h2 id="present-today">0</h2>
+        <p>Marked present on selected date</p>
+      </article>
+    </section>
+
+    <form id="student-form" class="panel" hidden>
+      <h2 id="form-title">Add new student</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label for="student-name">Full name *</label>
+          <input id="student-name" required maxlength="100">
+        </div>
+        <div class="field">
+          <label for="student-email">Email *</label>
+          <input id="student-email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="student-phone">Phone</label>
+          <input id="student-phone" type="tel" maxlength="15">
+        </div>
+        <div class="field">
+          <label for="student-course">Course *</label>
+          <select id="student-course" required>
+            <option value="">Select course</option>
+            <option>B.Tech CSE</option>
+            <option>B.Tech ECE</option>
+            <option>B.Sc CS</option>
+            <option>BCA</option>
+            <option>MBA</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="student-gender">Gender *</label>
+          <select id="student-gender" required>
+            <option value="">Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="student-dob">Date of birth</label>
+          <input id="student-dob" type="date">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="primary-btn" type="submit">Save student</button>
+        <button class="secondary-btn" type="button" id="cancel-form">Cancel</button>
+      </div>
+    </form>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>Student directory</h2>
+          <p class="muted">Search records and mark attendance.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <input id="student-search" type="search" placeholder="Search students...">
+        <label for="attendance-date">Attendance date</label>
+        <input id="attendance-date" type="date">
+        <span id="attendance-summary" class="summary">0 present</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Student</th>
+              <th>Course</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Attendance</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-list"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>StudentHub · Student Management System · 2026</footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
