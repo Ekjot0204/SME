@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validation(){
+        
+            let name=document.forms["signupForm"]["sname"].value;
+              let rollno=document.forms["signupForm"]["srollno"].value;
+               let email = document.forms["myform"]["email"].value;
+            let password = document.forms["myform"]["password"].value;
+            let confirm = document.forms["myform"]["confirm"].value;
+             const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(name==""&&rollno==""){
+                alert("Name and rollno must be filled out");
+                return false;
+            }
+            else if(name.length<2){
+                alert("Password must contain at least 6 characters");
+                return false;
+            }
+             else if (password != confirm) {
+                alert("Passwords do not match");
+                return false;
+            }
+            else {
+                alert("Signup successful!");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" onsubmit="return validation()" method="post">
+
+        <input type="text" name="fname"
+        placeholder="Enter your name" required>
+        <br><br>
+
+        <input type="number" name="rollno"
+        placeholder="Enter roll number" min="0"max="20" required>
+        <br><br>
+
+        <input type="text" name="email"
+        placeholder="Enter your email" required>
+        <br><br>
+
+        <input type="password" name="password"
+        placeholder="Enter password" required>
+        <br><br>
+
+        <input type="password" name="confirm"
+        placeholder="Confirm password" required>
+        <br><br>
+
+        <input type="submit" value="Sign Up">
+      
+       </form>
+       <p>If you click submit ,without filling out the text field,your browser will display an error message.</p>
+</body>
+</html>
