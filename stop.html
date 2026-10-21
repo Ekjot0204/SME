@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Stop Effect</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: seagreen;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>jQuery Stop Animation</h2>
+
+    <div id="box"></div>
+    <br>
+
+    <button id="animate">Start Animation</button>
+    <button id="stop">Stop Animation</button>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#animate").click(function() {
+                $("#box").animate({
+                    left: "400px",
+                    width: "200px",
+                    height: "200px"
+                }, 5000);
+            });
+
+            $("#stop").click(function() {
+                $("#box").stop();
+            });
+
+        });
+    </script>
+
+</body>
+</html>s

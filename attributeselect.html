@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attribute Selector</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<input type="text" placeholder="Enter your name">
+<input type="password" placeholder="Enter password">
+
+<script>
+$(document).ready(function() {
+    $("input[type='text']").css("background-color", "lightyellow");
+});
+</script>
+
+</body>
+</html>

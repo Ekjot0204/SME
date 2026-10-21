@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fade In</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2 id="text" style="display:none;">Hello Students!</h2>
+
+<button id="btn">Fade In</button>
+
+<script>
+$(document).ready(function() {
+    $("#btn").click(function() {
+        $("#text").fadeIn(2000);
+    });
+});
+</script>
+
+</body>
+</html>

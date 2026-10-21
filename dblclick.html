@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Double Click Event</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<p id="text">Double click on me!</p>
+
+<script>
+$(document).ready(function() {
+    $("#text").dblclick(function() {
+        $(this).css("color", "red");
+    });
+});
+</script>
+
+</body>
+</html>

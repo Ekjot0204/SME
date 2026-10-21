@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fade Toggle</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<h2 id="text">Welcome to jQuery!</h2>
+
+<button id="btn">Fade Toggle</button>
+
+<script>
+$(document).ready(function() {
+    $("#btn").click(function() {
+        $("#text").fadeToggle(1500);
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Sliding Effects</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+    <h2 id="text">Hello Students! Welcome to jQuery.</h2>
+    
+    <button id="up">Slide Up</button>
+     <button id="down">Slide Down</button>
+    <button id="toggle">Slide Toggle</button>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#up").click(function() {
+                $("#text").slideUp(1000);
+            });
+
+             $("#down").click(function() {
+                $("#text").slideDown(1000);
+            });
+
+            $("#toggle").click(function() {
+                $("#text").slideToggle(1000);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
